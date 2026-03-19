@@ -1,81 +1,34 @@
-# Global Exception Handling Middleware
+# Global Exception Handling
 
 ## Overview
-This project showcases a middleware approach for handling exceptions globally in a web application. It aims to standardize error responses and improve error management.
+This repository provides a comprehensive system for handling exceptions across various layers of applications. The intention is to create a clean and maintainable approach to error handling that ensures proper logging, notification, and tracking of errors without cluttering the business logic.
 
 ## Features
-- Global exception handling
-- Custom error responses
-- Logging of exceptions
-- Detailed error information for clients
+- Centralized error handling mechanism
+- Configurable error response structures
+- Middleware for integration with existing frameworks
+- Support for multiple logging strategies
 
-## Technology Stack
-- Programming Language: C#
-- Framework: ASP.NET Core
-- Database: SQL Server
+## Setup and Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/lipun619/GlobalExceptionHandling.git
+   ```
+2. Install the necessary packages:
+   ```bash
+   npm install
+   ```
+3. Configure the error handling middleware in your application as follows:
+   ```javascript
+   const errorHandler = require('./path/to/errorHandler');
+   app.use(errorHandler);
+   ```
 
-## Project Structure
-```
-├── Middleware
-│   └── GlobalExceptionHandler.cs
-├── Models
-│   └── ErrorResponse.cs
-├── Services
-│   └── EmailService.cs
-├── Controllers
-│   └── SampleController.cs
-└── Startup.cs
-```
+## Usage
+The error handling middleware should be used as part of your application’s configuration, where errors can be thrown or caught. Make sure to follow the recommended patterns to utilize the full capabilities of the library.
 
-## Middleware Components
-1. **GlobalExceptionHandler**: This is the core component that intercepts all unhandled exceptions.
-2. **ErrorResponse**: This model defines the structure of the error response sent to clients.
-3. **Logging**: Logs all exceptions for further analysis.
+## Contributing
+Please fork the repository and submit a pull request for any improvements or features.
 
-## Getting Started Guide
-To start using this middleware in your project:
-1. Clone the repository.
-2. Install the required packages using `dotnet restore`.
-3. Register the middleware in the `Startup.cs` file.
-
-## Services
-- **EmailService**: A sample service to send email notifications when an error occurs.
-
-## Database Configuration
-Make sure your database connection string is correctly set in `appsettings.json`.
-
-## Error Response Format
-```json
-{
-  "status": "error",
-  "message": "Description of the error",
-  "errorCode": 1234
-}
-```
-
-## Exception Handling Flow
-1. An exception occurs in a controller or service.
-2. The GlobalExceptionHandler middleware intercepts the exception.
-3. It logs the exception and formats the error response.
-4. The formatted response is sent back to the client.
-
-## Best Practices
-- Always provide meaningful error messages.
-- Log exceptions with stack traces for easier debugging.
-- Avoid exposing sensitive information in error responses.
-
-## Development Commands
-- Run the application: `dotnet run`
-- Execute tests: `dotnet test`
-
-## Configuration Files
-- `appsettings.json`: Contains configuration settings for the application.
-
-## Contributing Guidelines
-1. Fork the repository.
-2. Create a feature branch.
-3. Make the changes and commit.
-4. Submit a pull request.
-
-## Support Information
-For support, please reach out to [lipun619](https://github.com/lipun619) or open an issue in the GitHub repository.
+## License
+This project is licensed under the MIT License.
